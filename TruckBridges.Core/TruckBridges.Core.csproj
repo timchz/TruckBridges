@@ -5,7 +5,7 @@
     <MinimumVisualStudioVersion>10.0</MinimumVisualStudioVersion>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{76BDA7E6-2D46-428C-9896-68B6D4DDE80C}</ProjectGuid>
+    <ProjectGuid>{A3D66B59-6FA7-419B-8566-7DF64AD00260}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>TruckBridges.Core</RootNamespace>

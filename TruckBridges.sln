@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.24720.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TruckBridges.Core", "TruckBridges.Core\TruckBridges.Core.csproj", "{76BDA7E6-2D46-428C-9896-68B6D4DDE80C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TruckBridges.Core", "TruckBridges.Core\TruckBridges.Core.csproj", "{A3D66B59-6FA7-419B-8566-7DF64AD00260}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TruckBridges.Droid", "TruckBridges.Droid\TruckBridges.Droid.csproj", "{95F306D6-9BC8-46D4-8E92-CDFE11474EC0}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TruckBridges.Droid", "TruckBridges.Droid\TruckBridges.Droid.csproj", "{40B68C32-8BD1-4333-B04B-60032690DC07}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -13,16 +13,16 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{76BDA7E6-2D46-428C-9896-68B6D4DDE80C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{76BDA7E6-2D46-428C-9896-68B6D4DDE80C}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{76BDA7E6-2D46-428C-9896-68B6D4DDE80C}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{76BDA7E6-2D46-428C-9896-68B6D4DDE80C}.Release|Any CPU.Build.0 = Release|Any CPU
-		{95F306D6-9BC8-46D4-8E92-CDFE11474EC0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{95F306D6-9BC8-46D4-8E92-CDFE11474EC0}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{95F306D6-9BC8-46D4-8E92-CDFE11474EC0}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
-		{95F306D6-9BC8-46D4-8E92-CDFE11474EC0}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{95F306D6-9BC8-46D4-8E92-CDFE11474EC0}.Release|Any CPU.Build.0 = Release|Any CPU
-		{95F306D6-9BC8-46D4-8E92-CDFE11474EC0}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{A3D66B59-6FA7-419B-8566-7DF64AD00260}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A3D66B59-6FA7-419B-8566-7DF64AD00260}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A3D66B59-6FA7-419B-8566-7DF64AD00260}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A3D66B59-6FA7-419B-8566-7DF64AD00260}.Release|Any CPU.Build.0 = Release|Any CPU
+		{40B68C32-8BD1-4333-B04B-60032690DC07}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{40B68C32-8BD1-4333-B04B-60032690DC07}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{40B68C32-8BD1-4333-B04B-60032690DC07}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{40B68C32-8BD1-4333-B04B-60032690DC07}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{40B68C32-8BD1-4333-B04B-60032690DC07}.Release|Any CPU.Build.0 = Release|Any CPU
+		{40B68C32-8BD1-4333-B04B-60032690DC07}.Release|Any CPU.Deploy.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

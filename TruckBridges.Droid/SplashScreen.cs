@@ -5,7 +5,7 @@ using MvvmCross.Droid.Views;
 namespace TruckBridges.Droid
 {
     [Activity(
-        Label = "BCC Truck Routes"
+        Label = "BCC Truck Bridges"
         , MainLauncher = true
         //, Icon = "@mipmap/icon"
         , Theme = "@style/Theme.Splash"

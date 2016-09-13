@@ -13,7 +13,7 @@ namespace TruckBridges.Droid
 
         protected override IMvxApplication CreateApp()
         {
-            return new TruckBridges.Core.App();
+            return new Core.App();
         }
 
         protected override IMvxTrace CreateDebugTrace()

@@ -34,16 +34,16 @@
             android:text="Menu"
             android:id="@+id/button_menu" />
     </LinearLayout>
+    <LinearLayout
+        android:id="@+id/destinationWrapper"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_alignParentTop="true"
+        android:background="#e0e0e0" />
     <fragment
         android:id="@+id/MapViewMap"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         class="com.google.android.gms.maps.MapFragment" />
-    <LinearLayout
-        android:id="@+id/body"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_below="@+id/header"
-        android:background="@drawable/map" />
 </RelativeLayout>

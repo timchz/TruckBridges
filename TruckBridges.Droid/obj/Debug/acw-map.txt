@@ -2,6 +2,10 @@ TruckBridges.Droid.SplashScreen, TruckBridges.Droid;md5da611b26371d2be334741f475
 TruckBridges.Droid.SplashScreen, TruckBridges.Droid, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null;md5da611b26371d2be334741f475f7648bb.SplashScreen
 TruckBridges.Droid.SplashScreen;md5da611b26371d2be334741f475f7648bb.SplashScreen
 truckbridges.droid.SplashScreen;md5da611b26371d2be334741f475f7648bb.SplashScreen
+TruckBridges.Droid.Views.LocationSearchView, TruckBridges.Droid;md5ec6940abc5b04f8d22df89f8c0faa674.LocationSearchView
+TruckBridges.Droid.Views.LocationSearchView, TruckBridges.Droid, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null;md5ec6940abc5b04f8d22df89f8c0faa674.LocationSearchView
+TruckBridges.Droid.Views.LocationSearchView;md5ec6940abc5b04f8d22df89f8c0faa674.LocationSearchView
+truckbridges.droid.views.LocationSearchView;md5ec6940abc5b04f8d22df89f8c0faa674.LocationSearchView
 TruckBridges.Droid.Views.MapView, TruckBridges.Droid;md5ec6940abc5b04f8d22df89f8c0faa674.MapView
 TruckBridges.Droid.Views.MapView, TruckBridges.Droid, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null;md5ec6940abc5b04f8d22df89f8c0faa674.MapView
 TruckBridges.Droid.Views.MapView;md5ec6940abc5b04f8d22df89f8c0faa674.MapView
@@ -262,6 +266,18 @@ Android.Gms.Security.ProviderInstaller/IProviderInstallListenerImplementor, Xama
 Android.Gms.Security.ProviderInstaller+IProviderInstallListenerImplementor, Xamarin.GooglePlayServices.Basement, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null;mono.com.google.android.gms.security.ProviderInstaller_ProviderInstallListenerImplementor
 Android.Gms.Security.ProviderInstaller.IProviderInstallListenerImplementor;mono.com.google.android.gms.security.ProviderInstaller_ProviderInstallListenerImplementor
 mono.com.google.android.gms.security.ProviderInstaller_ProviderInstallListenerImplementor;mono.com.google.android.gms.security.ProviderInstaller_ProviderInstallListenerImplementor
+Android.Gms.Location.LocationListener, Xamarin.GooglePlayServices.Location;md5c3f794aca97c55dc0e6d5992e563f700.LocationListener
+Android.Gms.Location.LocationListener, Xamarin.GooglePlayServices.Location, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null;md5c3f794aca97c55dc0e6d5992e563f700.LocationListener
+Android.Gms.Location.LocationListener;md5c3f794aca97c55dc0e6d5992e563f700.LocationListener
+android.gms.location.LocationListener;md5c3f794aca97c55dc0e6d5992e563f700.LocationListener
+Android.Gms.Location.ILocationListenerImplementor, Xamarin.GooglePlayServices.Location;mono.com.google.android.gms.location.LocationListenerImplementor
+Android.Gms.Location.ILocationListenerImplementor, Xamarin.GooglePlayServices.Location, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null;mono.com.google.android.gms.location.LocationListenerImplementor
+Android.Gms.Location.ILocationListenerImplementor;mono.com.google.android.gms.location.LocationListenerImplementor
+mono.com.google.android.gms.location.LocationListenerImplementor;mono.com.google.android.gms.location.LocationListenerImplementor
+Android.Gms.Location.Places.UI.IPlaceSelectionListenerImplementor, Xamarin.GooglePlayServices.Location;mono.com.google.android.gms.location.places.ui.PlaceSelectionListenerImplementor
+Android.Gms.Location.Places.UI.IPlaceSelectionListenerImplementor, Xamarin.GooglePlayServices.Location, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null;mono.com.google.android.gms.location.places.ui.PlaceSelectionListenerImplementor
+Android.Gms.Location.Places.UI.IPlaceSelectionListenerImplementor;mono.com.google.android.gms.location.places.ui.PlaceSelectionListenerImplementor
+mono.com.google.android.gms.location.places.ui.PlaceSelectionListenerImplementor;mono.com.google.android.gms.location.places.ui.PlaceSelectionListenerImplementor
 Android.Gms.Maps.GoogleMap/IOnCameraChangeListenerImplementor, Xamarin.GooglePlayServices.Maps;mono.com.google.android.gms.maps.GoogleMap_OnCameraChangeListenerImplementor
 Android.Gms.Maps.GoogleMap+IOnCameraChangeListenerImplementor, Xamarin.GooglePlayServices.Maps, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null;mono.com.google.android.gms.maps.GoogleMap_OnCameraChangeListenerImplementor
 Android.Gms.Maps.GoogleMap.IOnCameraChangeListenerImplementor;mono.com.google.android.gms.maps.GoogleMap_OnCameraChangeListenerImplementor

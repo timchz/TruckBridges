@@ -11,7 +11,7 @@ namespace TruckBridges.Core
                 .AsInterfaces()
                 .RegisterAsLazySingleton();
 
-            RegisterAppStart<ViewModels.ScanmenuViewModel>();
+            RegisterAppStart<ViewModels.LocationSearchViewModel>();
         }
     }
 }

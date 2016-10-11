@@ -29,7 +29,7 @@ namespace TruckBridges.Core.ViewModels
 
             ButtonConfirm = new MvxCommand(() =>
             {
-                ShowViewModel<MapViewModel>();
+                ShowViewModel<LocationSearchViewModel>();
             });
         }
 

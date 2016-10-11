@@ -22,7 +22,8 @@
   <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
   <application android:label="TruckBridges.Droid" android:name="android.app.Application" android:allowBackup="true" android:debuggable="true">
     <!-- Put your Google Maps V2 API Key here. -->
-    <meta-data android:name="com.google.android.maps.v2.API_KEY" android:value="AIzaSyB6CwV9qBJ5iNdjJA4l6sWEInL3BOAXOLY" />
+    <meta-data android:name="com.google.android.geo.API_KEY" android:value="AIzaSyB6CwV9qBJ5iNdjJA4l6sWEInL3BOAXOLY" />
+    <!--    <meta-data android:name="com.google.android.maps.v2.API_KEY" android:value="AIzaSyB6CwV9qBJ5iNdjJA4l6sWEInL3BOAXOLY" />-->
     <meta-data android:name="com.google.android.gms.version" android:value="@integer/google_play_services_version" />
     <meta-data android:name="com.google.android.gms.version" android:value="@integer/google_play_services_version" />
     <activity android:label="BCC Truck Bridges" android:noHistory="true" android:screenOrientation="portrait" android:theme="@style/Theme.Splash" android:name="md5da611b26371d2be334741f475f7648bb.SplashScreen">
@@ -31,6 +32,7 @@
         <category android:name="android.intent.category.LAUNCHER" />
       </intent-filter>
     </activity>
+    <activity android:label="View for LocationSearchViewModel" android:name="md5ec6940abc5b04f8d22df89f8c0faa674.LocationSearchView" />
     <activity android:label="View for MapViewModel" android:name="md5ec6940abc5b04f8d22df89f8c0faa674.MapView" />
     <activity android:label="View for ScanmenuViewModel" android:name="md5ec6940abc5b04f8d22df89f8c0faa674.ScanmenuView" />
     <activity android:label="View for ScanViewModel" android:name="md5ec6940abc5b04f8d22df89f8c0faa674.ScanView" />

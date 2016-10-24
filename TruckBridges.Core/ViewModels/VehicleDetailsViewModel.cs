@@ -1,20 +1,19 @@
-﻿// Created by Tim Heinz - n8683981
+﻿// Created by Roslin Punnoose - n9319751
 
 using MvvmCross.Core.ViewModels;
+using TruckBridges.Core.Models;
 
 namespace TruckBridges.Core.ViewModels
 {
-    public class VehicleDetailsViewModel
-        : MvxViewModel
+    public class VehicleDetailsViewModel : MvxViewModel
     {
-        private double sliderValueClearance;
-        public double SliderValueClearance
+        public VehicleDetails vehicleDetails { get; set; }
+        public void Init(VehicleDetails details)
         {
-            get { return sliderValueClearance; }
-            set
-            {
-                SetProperty(ref sliderValueClearance, value);
-            }
+            if (details != null)
+                vehicleDetails = details;
+            else
+                vehicleDetails = new VehicleDetails();
         }
 
         public System.Windows.Input.ICommand ButtonCancel { get; private set; }
@@ -29,11 +28,8 @@ namespace TruckBridges.Core.ViewModels
 
             ButtonConfirm = new MvxCommand(() =>
             {
-                ShowViewModel<LocationSearchViewModel>();
+                ShowViewModel<MapViewModel>();
             });
         }
-
     }
-
-
 }

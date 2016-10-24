@@ -3,6 +3,7 @@
 using Android.App;
 using Android.OS;
 using MvvmCross.Droid.Views;
+using ZXing.Mobile;
 
 namespace TruckBridges.Droid.Views
 {
@@ -13,6 +14,7 @@ namespace TruckBridges.Droid.Views
         {
             base.OnCreate(bundle);
             SetContentView(Resource.Layout.ScanView);
+            MobileBarcodeScanner.Initialize(this.Application);
         }
     }
 }

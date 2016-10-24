@@ -20,7 +20,6 @@ namespace TruckBridges.Core.ViewModels
 
 
         private ObservableCollection<LocationAutoCompleteResult> locations;
-
         public ObservableCollection<LocationAutoCompleteResult> Locations
         {
             get { return locations; }
@@ -28,7 +27,6 @@ namespace TruckBridges.Core.ViewModels
         }
 
         private string searchTerm;
-
         public string SearchTerm
         {
             get { return searchTerm; }
@@ -42,13 +40,14 @@ namespace TruckBridges.Core.ViewModels
             }
         }
 
-        public async void SearchLocations(string searchTerm)
+        public async void SearchLocations(GeoLocation centerLocation, string searchTerm)
         {
             LocationService locationService = new LocationService();
             Locations.Clear();
-            var locationResults = await locationService.GetLocations(searchTerm);
-            var bestLocationResults = locationResults.Where(location => location.Rank > 80);
-            foreach (var item in bestLocationResults)
+            var locationResults = await locationService.GetLocations(centerLocation, searchTerm);
+            //var bestLocationResults = locationResults.Where(location => location.Rank > 80);
+            //foreach (var item in bestLocationResults)
+            foreach (var item in locationResults)
             {
                 Locations.Add(item);
             }

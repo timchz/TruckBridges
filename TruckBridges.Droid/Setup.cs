@@ -6,6 +6,7 @@ using MvvmCross.Platform;
 using TruckBridges.Core.Interfaces;
 using TruckBridges.Droid.Database;
 using TruckBridges.Droid.Services;
+using ZXing.Mobile;
 
 namespace TruckBridges.Droid
 {
@@ -29,6 +30,8 @@ namespace TruckBridges.Droid
         {
             Mvx.LazyConstructAndRegisterSingleton<ISqlite, SqliteDroid>();
             Mvx.LazyConstructAndRegisterSingleton<IGeoCoder, GeoCoderService>();
+            Mvx.LazyConstructAndRegisterSingleton<IToast, ToastService>();
+            Mvx.LazyConstructAndRegisterSingleton<IMobileBarcodeScanner, MobileBarcodeScanner>();
             base.InitializeFirstChance();
         }
     }

@@ -22,6 +22,9 @@ E:\Documents\Visual Studio 2015\Projects\TruckBridges\TruckBridges.Droid\obj\Deb
 E:\Documents\Visual Studio 2015\Projects\TruckBridges\TruckBridges.Droid\obj\Debug\android\assets\Xamarin.GooglePlayServices.Basement.dll
 E:\Documents\Visual Studio 2015\Projects\TruckBridges\TruckBridges.Droid\obj\Debug\android\assets\Xamarin.GooglePlayServices.Location.dll
 E:\Documents\Visual Studio 2015\Projects\TruckBridges\TruckBridges.Droid\obj\Debug\android\assets\Xamarin.GooglePlayServices.Maps.dll
+E:\Documents\Visual Studio 2015\Projects\TruckBridges\TruckBridges.Droid\obj\Debug\android\assets\ZXing.Net.Mobile.Core.dll
+E:\Documents\Visual Studio 2015\Projects\TruckBridges\TruckBridges.Droid\obj\Debug\android\assets\zxing.portable.dll
+E:\Documents\Visual Studio 2015\Projects\TruckBridges\TruckBridges.Droid\obj\Debug\android\assets\ZXingNetMobile.dll
 E:\Documents\Visual Studio 2015\Projects\TruckBridges\TruckBridges.Droid\obj\Debug\android\assets\TruckBridges.Core.dll
 E:\Documents\Visual Studio 2015\Projects\TruckBridges\TruckBridges.Droid\obj\Debug\android\assets\System.Threading.dll
 E:\Documents\Visual Studio 2015\Projects\TruckBridges\TruckBridges.Droid\obj\Debug\android\assets\System.Runtime.dll
@@ -44,12 +47,12 @@ E:\Documents\Visual Studio 2015\Projects\TruckBridges\TruckBridges.Droid\obj\Deb
 E:\Documents\Visual Studio 2015\Projects\TruckBridges\TruckBridges.Droid\obj\Debug\android\assets\System.Resources.ResourceManager.dll
 E:\Documents\Visual Studio 2015\Projects\TruckBridges\TruckBridges.Droid\obj\Debug\android\assets\System.IO.dll
 E:\Documents\Visual Studio 2015\Projects\TruckBridges\TruckBridges.Droid\obj\Debug\android\assets\System.Text.Encoding.dll
+E:\Documents\Visual Studio 2015\Projects\TruckBridges\TruckBridges.Droid\obj\Debug\android\assets\System.Text.RegularExpressions.dll
 E:\Documents\Visual Studio 2015\Projects\TruckBridges\TruckBridges.Droid\obj\Debug\android\assets\System.Net.Requests.dll
 E:\Documents\Visual Studio 2015\Projects\TruckBridges\TruckBridges.Droid\obj\Debug\android\assets\Newtonsoft.Json.dll
 E:\Documents\Visual Studio 2015\Projects\TruckBridges\TruckBridges.Droid\obj\Debug\android\assets\System.Xml.XDocument.dll
 E:\Documents\Visual Studio 2015\Projects\TruckBridges\TruckBridges.Droid\obj\Debug\android\assets\System.Runtime.Serialization.Primitives.dll
 E:\Documents\Visual Studio 2015\Projects\TruckBridges\TruckBridges.Droid\obj\Debug\android\assets\System.Dynamic.Runtime.dll
-E:\Documents\Visual Studio 2015\Projects\TruckBridges\TruckBridges.Droid\obj\Debug\android\assets\System.Text.RegularExpressions.dll
 E:\Documents\Visual Studio 2015\Projects\TruckBridges\TruckBridges.Droid\obj\Debug\android\assets\System.Xml.ReaderWriter.dll
 E:\Documents\Visual Studio 2015\Projects\TruckBridges\TruckBridges.Droid\obj\Debug\android\assets\System.Text.Encoding.Extensions.dll
 E:\Documents\Visual Studio 2015\Projects\TruckBridges\TruckBridges.Droid\obj\Debug\android\assets\Microsoft.CSharp.dll

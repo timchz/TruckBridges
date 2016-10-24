@@ -49,6 +49,9 @@ namespace TruckBridges.Droid
 			global::MvvmCross.Binding.Droid.Resource.Styleable.MvxListView_MvxItemTemplate = global::TruckBridges.Droid.Resource.Styleable.MvxListView_MvxItemTemplate;
 			global::SQLite.Net.Platform.XamarinAndroid.Resource.String.ApplicationName = global::TruckBridges.Droid.Resource.String.ApplicationName;
 			global::SQLite.Net.Platform.XamarinAndroid.Resource.String.Hello = global::TruckBridges.Droid.Resource.String.Hello;
+			global::ZXing.Mobile.Resource.Id.contentFrame = global::TruckBridges.Droid.Resource.Id.contentFrame;
+			global::ZXing.Mobile.Resource.Layout.zxingscanneractivitylayout = global::TruckBridges.Droid.Resource.Layout.zxingscanneractivitylayout;
+			global::ZXing.Mobile.Resource.Layout.zxingscannerfragmentlayout = global::TruckBridges.Droid.Resource.Layout.zxingscannerfragmentlayout;
 		}
 		
 		public partial class Attribute
@@ -457,8 +460,8 @@ namespace TruckBridges.Droid
 		public partial class Id
 		{
 			
-			// aapt resource value: 0x7f080017
-			public const int MapViewMap = 2131230743;
+			// aapt resource value: 0x7f080014
+			public const int MapViewMap = 2131230740;
 			
 			// aapt resource value: 0x7f080000
 			public const int MvvmCrossTagId = 2131230720;
@@ -475,47 +478,41 @@ namespace TruckBridges.Droid
 			// aapt resource value: 0x7f08000c
 			public const int auto = 2131230732;
 			
-			// aapt resource value: 0x7f080025
-			public const int body = 2131230757;
+			// aapt resource value: 0x7f080026
+			public const int body = 2131230758;
+			
+			// aapt resource value: 0x7f080017
+			public const int button1 = 2131230743;
 			
 			// aapt resource value: 0x7f080010
 			public const int button_back = 2131230736;
 			
-			// aapt resource value: 0x7f080024
-			public const int button_cancel = 2131230756;
-			
-			// aapt resource value: 0x7f08002a
-			public const int button_confirm = 2131230762;
+			// aapt resource value: 0x7f080025
+			public const int button_cancel = 2131230757;
 			
 			// aapt resource value: 0x7f080028
-			public const int button_done = 2131230760;
+			public const int button_confirm = 2131230760;
 			
-			// aapt resource value: 0x7f080014
-			public const int button_finish = 2131230740;
+			// aapt resource value: 0x7f080024
+			public const int button_help = 2131230756;
 			
-			// aapt resource value: 0x7f080023
-			public const int button_help = 2131230755;
-			
-			// aapt resource value: 0x7f080021
-			public const int button_history = 2131230753;
+			// aapt resource value: 0x7f080022
+			public const int button_history = 2131230754;
 			
 			// aapt resource value: 0x7f080015
 			public const int button_menu = 2131230741;
 			
-			// aapt resource value: 0x7f080020
-			public const int button_scan = 2131230752;
+			// aapt resource value: 0x7f080021
+			public const int button_scan = 2131230753;
 			
-			// aapt resource value: 0x7f080022
-			public const int button_settings = 2131230754;
+			// aapt resource value: 0x7f080023
+			public const int button_settings = 2131230755;
 			
-			// aapt resource value: 0x7f080026
-			public const int camera = 2131230758;
+			// aapt resource value: 0x7f080029
+			public const int contentFrame = 2131230761;
 			
 			// aapt resource value: 0x7f08000d
 			public const int dark = 2131230733;
-			
-			// aapt resource value: 0x7f080016
-			public const int destinationWrapper = 2131230742;
 			
 			// aapt resource value: 0x7f080012
 			public const int editWrapper = 2131230738;
@@ -532,6 +529,9 @@ namespace TruckBridges.Droid
 			// aapt resource value: 0x7f080009
 			public const int icon_only = 2131230729;
 			
+			// aapt resource value: 0x7f080018
+			public const int latlongLocation = 2131230744;
+			
 			// aapt resource value: 0x7f08000e
 			public const int light = 2131230734;
 			
@@ -541,38 +541,38 @@ namespace TruckBridges.Droid
 			// aapt resource value: 0x7f080004
 			public const int normal = 2131230724;
 			
-			// aapt resource value: 0x7f08001a
-			public const int place_autocomplete_clear_button = 2131230746;
-			
-			// aapt resource value: 0x7f08001c
-			public const int place_autocomplete_powered_by_google = 2131230748;
-			
-			// aapt resource value: 0x7f08001e
-			public const int place_autocomplete_prediction_primary_text = 2131230750;
-			
-			// aapt resource value: 0x7f08001f
-			public const int place_autocomplete_prediction_secondary_text = 2131230751;
+			// aapt resource value: 0x7f08001b
+			public const int place_autocomplete_clear_button = 2131230747;
 			
 			// aapt resource value: 0x7f08001d
-			public const int place_autocomplete_progress = 2131230749;
+			public const int place_autocomplete_powered_by_google = 2131230749;
 			
-			// aapt resource value: 0x7f080018
-			public const int place_autocomplete_search_button = 2131230744;
+			// aapt resource value: 0x7f08001f
+			public const int place_autocomplete_prediction_primary_text = 2131230751;
+			
+			// aapt resource value: 0x7f080020
+			public const int place_autocomplete_prediction_secondary_text = 2131230752;
+			
+			// aapt resource value: 0x7f08001e
+			public const int place_autocomplete_progress = 2131230750;
 			
 			// aapt resource value: 0x7f080019
-			public const int place_autocomplete_search_input = 2131230745;
+			public const int place_autocomplete_search_button = 2131230745;
 			
-			// aapt resource value: 0x7f08001b
-			public const int place_autocomplete_separator = 2131230747;
+			// aapt resource value: 0x7f08001a
+			public const int place_autocomplete_search_input = 2131230746;
+			
+			// aapt resource value: 0x7f08001c
+			public const int place_autocomplete_separator = 2131230748;
 			
 			// aapt resource value: 0x7f080005
 			public const int satellite = 2131230725;
 			
+			// aapt resource value: 0x7f080016
+			public const int searchbox = 2131230742;
+			
 			// aapt resource value: 0x7f080013
 			public const int searchboxWrapper = 2131230739;
-			
-			// aapt resource value: 0x7f080029
-			public const int seekbar_clearance = 2131230761;
 			
 			// aapt resource value: 0x7f08000a
 			public const int standard = 2131230730;
@@ -646,7 +646,16 @@ namespace TruckBridges.Droid
 			public const int SplashScreen = 2130903049;
 			
 			// aapt resource value: 0x7f03000a
-			public const int VehicleDetailsView = 2130903050;
+			public const int VehicleDetailsTableLayout = 2130903050;
+			
+			// aapt resource value: 0x7f03000b
+			public const int VehicleDetailsView = 2130903051;
+			
+			// aapt resource value: 0x7f03000c
+			public const int zxingscanneractivitylayout = 2130903052;
+			
+			// aapt resource value: 0x7f03000d
+			public const int zxingscannerfragmentlayout = 2130903053;
 			
 			static Layout()
 			{

@@ -1,7 +1,10 @@
 ﻿// Created by Tim Heinz - n8683981
 
 using System;
+using System.Linq;
 using System.Threading.Tasks;
+using System.Collections.ObjectModel;
+using System.Windows.Input;
 using MvvmCross.Core.ViewModels;
 using TruckBridges.Core.Interfaces;
 using TruckBridges.Core.Models;
@@ -11,6 +14,38 @@ namespace TruckBridges.Core.ViewModels
 {
     public class MapViewModel : MvxViewModel
     {
+        private string searchTerm;
+        public string SearchTerm
+        {
+            get { return searchTerm; }
+            set
+            {
+                SetProperty(ref searchTerm, value);
+            }
+        }
+
+        private ObservableCollection<LocationAutoCompleteResult> locations;
+        public ObservableCollection<LocationAutoCompleteResult> Locations
+        {
+            get { return locations; }
+            set { SetProperty(ref locations, value); }
+        }
+
+        public async void SearchLocations(GeoLocation centerLocation, string searchTerm)
+        {
+            LocationService locationService = new LocationService();
+            Locations.Clear();
+            var locationResults = await locationService.GetLocations(centerLocation, searchTerm);
+            //var bestLocationResults = locationResults.Where(location => location.Rank > 80);
+            //foreach (var item in bestLocationResults)
+            foreach (var item in locationResults)
+            {
+                Locations.Add(item);
+            }
+        }
+
+
+/*
         LocationAutoCompleteResult selectedLocation;
         public void Init(LocationAutoCompleteResult parameters)
         {
@@ -30,10 +65,9 @@ namespace TruckBridges.Core.ViewModels
             base.Start();
             City = selectedLocation.LocalizedName;
         }
+*/
 
 
-
-        // NEW
         private GeoLocation myLocation;
         public GeoLocation MyLocation
         {
@@ -41,7 +75,6 @@ namespace TruckBridges.Core.ViewModels
             set { myLocation = value; }
         }
 
-        // NEW
         public void OnMyLocationChanged(GeoLocation location)
         {
             MyLocation = location;
@@ -52,18 +85,6 @@ namespace TruckBridges.Core.ViewModels
             //GetWeatherInfo(location);
         }
 
-/*
-        private async Task GetWeatherInfo(GeoLocation location)
-        {
-            var weatherService = new WeatherService();
-            var city = await geocoder.GetCityFromLocation(location);
-            var locationKey = await weatherService.GetLocations(city);
-            var bestLocation = locationKey.FirstOrDefault();
-            var forecast = await weatherService.GetForecast(bestLocation.Key);
-            location.Locality = city;
-            weatherPinFound(location, forecast);
-        }
-*/
         private async void MoveToAddress(string address)
         {
             if (address == "")
@@ -84,7 +105,6 @@ namespace TruckBridges.Core.ViewModels
             stopPinFound(location);
         }
 
-        // NEW
         private Action<GeoLocation, float> moveToLocation;
         private Action<GeoLocation> stopPinFound;
         public void OnMapSetup(Action<GeoLocation, float> MoveToLocation,
@@ -94,25 +114,37 @@ namespace TruckBridges.Core.ViewModels
             stopPinFound = StopPinFound;
 
             // add selected destination pin
-            AddStopPin(City);
+            //AddStopPin(City);
         }
 
-        // NEW
+
         private IGeoCoder geocoder;
-        public System.Windows.Input.ICommand ButtonFinish { get; private set; }
-        public System.Windows.Input.ICommand ButtonMenu { get; private set; }
+        public ICommand SelectLocationCommand { get; private set; }
+        public ICommand ButtonSearch { get; private set; }
+        public ICommand ButtonMenu { get; private set; }
 
         public MapViewModel(IGeoCoder geocoder)
         {
             this.geocoder = geocoder;
+            locations = new ObservableCollection<LocationAutoCompleteResult>();
 
-            ButtonFinish = new MvxCommand(() =>
+            SelectLocationCommand = new
+                MvxCommand<LocationAutoCompleteResult>(selectedLocation =>
             {
-                ShowViewModel<ScanViewModel>();
+                AddStopPin(selectedLocation.LocalizedName);
+            });
+
+            ButtonSearch = new MvxCommand(() =>
+            {
+                if (SearchTerm.Length > 3 && MyLocation != null)
+                {
+                    SearchLocations(MyLocation, SearchTerm);
+                }
             });
 
             ButtonMenu = new MvxCommand(() =>
             {
+                ShowViewModel<ScanViewModel>();
             });
         }
 

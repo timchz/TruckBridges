@@ -1,9 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
-
-<!--
-  Created by Tim Heinz - n8683981
--->
-
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:local="http://schemas.android.com/apk/res-auto"
     android:layout_width="fill_parent"
@@ -32,38 +27,31 @@
             android:text="Cancel"
             android:id="@+id/button_cancel" />
     </LinearLayout>
+
     <TableLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:stretchColumns="1"
         android:layout_below="@+id/header"
-        android:id="@+id/body">
+        android:stretchColumns="1">
         <TableRow>
             <TextView
                 android:text="Registration No."
                 android:padding="3dip" />
             <TextView
-                android:text="RON-888"
+                android:text=""
                 android:gravity="right"
-                android:padding="3dip" />
+                android:padding="3dip"
+                local:MvxBind="Text vehicleDetails.Registration" />
         </TableRow>
         <TableRow>
             <TextView
                 android:text="Clearance"
                 android:padding="3dip" />
-            <SeekBar
-                android:id="@+id/seekbar_clearance"
-                android:layout_width="150dp"
-                android:layout_height="wrap_content"
-                android:max="5"
-                local:MvxBind="Progress SliderValueClearance" />
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/seekbar_clearance"
-                android:inputType="numberDecimal"
-                local:MvxBind="Text SliderValueClearance, Mode=TwoWay"
-                android:padding="3dip" />
+                android:text=""
+                android:gravity="right"
+                android:padding="3dip"
+                local:MvxBind="Text vehicleDetails.Clearance" />
         </TableRow>
         <TableRow>
             <TextView
@@ -72,7 +60,8 @@
             <TextView
                 android:text="10400 KG"
                 android:gravity="right"
-                android:padding="3dip" />
+                android:padding="3dip"
+                local:MvxBind="Text vehicleDetails.Weight" />
         </TableRow>
         <TableRow>
             <TextView
@@ -81,7 +70,8 @@
             <TextView
                 android:text="12m"
                 android:gravity="right"
-                android:padding="3dip" />
+                android:padding="3dip"
+                local:MvxBind="Text vehicleDetails.Length" />
         </TableRow>
         <TableRow>
             <TextView
@@ -90,7 +80,8 @@
             <TextView
                 android:text="100 KM/H"
                 android:gravity="right"
-                android:padding="3dip" />
+                android:padding="3dip"
+                local:MvxBind="Text vehicleDetails.SpeedLimit" />
         </TableRow>
         <TableRow>
             <TextView
@@ -99,7 +90,8 @@
             <TextView
                 android:text="1"
                 android:gravity="right"
-                android:padding="3dip" />
+                android:padding="3dip"
+                local:MvxBind="Text vehicleDetails.Trailers" />
         </TableRow>
         <TableRow>
             <TextView
@@ -108,9 +100,11 @@
             <TextView
                 android:text="Corrosive Materials"
                 android:gravity="right"
-                android:padding="3dip" />
+                android:padding="3dip"
+                local:MvxBind="Text vehicleDetails.HazardousMaterialClass" />
         </TableRow>
-    </TableLayout>
+    </TableLayout>  
+  
     <LinearLayout
         android:id="@+id/footer"
         android:layout_width="fill_parent"

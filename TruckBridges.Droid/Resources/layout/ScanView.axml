@@ -1,10 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
-
-<!--
-  Created by Ronak Patel - n9315144
-  Edited by Tim Heinz - n8683981
--->
-
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:local="http://schemas.android.com/apk/res-auto"
     android:layout_width="fill_parent"
@@ -35,7 +29,7 @@
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentRight="true"
+            android:layout_alignParentLeft="true"
             local:MvxBind="Click ButtonMenu"
             android:text="Menu"
             android:id="@+id/button_menu" />
@@ -46,12 +40,16 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:layout_below="@+id/header">
-        <ImageView
-            android:id="@+id/camera"
-            android:layout_width="fill_parent"
-            android:layout_height="300dp"
-            android:src="@drawable/qrcode"
-            android:background="#ffffff" />
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Click to scan once"
+            local:MvxBind="Click ScanOnceCommand" />
+      <Button
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:text="Click to scan continuously"
+          local:MvxBind="Click ScanContinuouslyCommand" />
     </LinearLayout>
     <LinearLayout
         android:id="@+id/footer"
@@ -60,12 +58,10 @@
         android:orientation="horizontal"
         android:layout_below="@+id/body"
         android:background="#c1c101">
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerInParent="true"
-            local:MvxBind="Click ButtonDone"
-            android:text="Done"
-            android:id="@+id/button_done" />
+        <MvxListView
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:textSize="40dp"
+            local:MvxBind="ItemsSource Barcodes; ItemClick GenerateQRCodeCommand" />
     </LinearLayout>
 </RelativeLayout>

@@ -78,5 +78,9 @@ E:\Documents\Visual Studio 2015\Projects\TruckBridges\TruckBridges.Droid\bin\Deb
 E:\Documents\Visual Studio 2015\Projects\TruckBridges\TruckBridges.Droid\bin\Debug\SQLite.Net.dll
 E:\Documents\Visual Studio 2015\Projects\TruckBridges\TruckBridges.Droid\bin\Debug\SQLite.Net.Platform.XamarinAndroid.dll
 E:\Documents\Visual Studio 2015\Projects\TruckBridges\TruckBridges.Droid\obj\Debug\res\layout\locationsearchview.xml
+E:\Documents\Visual Studio 2015\Projects\TruckBridges\TruckBridges.Droid\bin\Debug\ZXing.Net.Mobile.Core.dll
+E:\Documents\Visual Studio 2015\Projects\TruckBridges\TruckBridges.Droid\bin\Debug\zxing.portable.dll
+E:\Documents\Visual Studio 2015\Projects\TruckBridges\TruckBridges.Droid\bin\Debug\ZXingNetMobile.dll
+E:\Documents\Visual Studio 2015\Projects\TruckBridges\TruckBridges.Droid\obj\Debug\res\layout\vehicledetailstablelayout.xml
 E:\Documents\Visual Studio 2015\Projects\TruckBridges\TruckBridges.Droid\obj\Debug\TruckBridges.Droid.dll.mdb
 E:\Documents\Visual Studio 2015\Projects\TruckBridges\TruckBridges.Droid\bin\Debug\TruckBridges.Droid.dll.mdb

@@ -1,9 +1,9 @@
 ﻿// Created by Tim Heinz - n8683981
 
 using System;
-using System.Linq;
-using System.Threading.Tasks;
+using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Linq;
 using System.Windows.Input;
 using MvvmCross.Core.ViewModels;
 using TruckBridges.Core.Interfaces;
@@ -14,6 +14,29 @@ namespace TruckBridges.Core.ViewModels
 {
     public class MapViewModel : MvxViewModel
     {
+        //--------------------------------------------------------------------
+        // GLOBAL VARIABLES
+        //--------------------------------------------------------------------
+
+        LocationService locationService = new LocationService();
+
+
+        //--------------------------------------------------------------------
+        // BRIDGE DATA
+        //--------------------------------------------------------------------
+
+        private List<GeoArea> bridgeLocations = new List<GeoArea>();
+        public List<GeoArea> BridgeLocations
+        {
+            get { return bridgeLocations; }
+            set { SetProperty(ref bridgeLocations, value); }
+        }
+
+
+        //--------------------------------------------------------------------
+        // SEARCH BOX
+        //--------------------------------------------------------------------
+
         private string searchTerm;
         public string SearchTerm
         {
@@ -24,7 +47,8 @@ namespace TruckBridges.Core.ViewModels
             }
         }
 
-        private ObservableCollection<LocationAutoCompleteResult> locations;
+        private ObservableCollection<LocationAutoCompleteResult> locations
+            = new ObservableCollection<LocationAutoCompleteResult>();
         public ObservableCollection<LocationAutoCompleteResult> Locations
         {
             get { return locations; }
@@ -33,42 +57,21 @@ namespace TruckBridges.Core.ViewModels
 
         public async void SearchLocations(GeoLocation centerLocation, string searchTerm)
         {
-            LocationService locationService = new LocationService();
+            if (centerLocation == null)
+                return;
+
             Locations.Clear();
             var locationResults = await locationService.GetLocations(centerLocation, searchTerm);
-            //var bestLocationResults = locationResults.Where(location => location.Rank > 80);
-            //foreach (var item in bestLocationResults)
             foreach (var item in locationResults)
-            {
                 Locations.Add(item);
-            }
         }
 
 
-/*
-        LocationAutoCompleteResult selectedLocation;
-        public void Init(LocationAutoCompleteResult parameters)
-        {
-            selectedLocation = parameters;
+        //--------------------------------------------------------------------
+        // MAP FRAGMENT
+        //--------------------------------------------------------------------
 
-        }
-
-
-        private string city;
-        public string City
-        {
-            get { return city; }
-            set { SetProperty(ref city, value); }
-        }
-        public override void Start()
-        {
-            base.Start();
-            City = selectedLocation.LocalizedName;
-        }
-*/
-
-
-        private GeoLocation myLocation;
+        private GeoLocation myLocation = null;
         public GeoLocation MyLocation
         {
             get { return myLocation; }
@@ -79,12 +82,16 @@ namespace TruckBridges.Core.ViewModels
         {
             MyLocation = location;
         }
-
-        public void MapTapped(GeoLocation location)
+    
+        public void OnMyLocationNearBridge(GeoLocation location)
         {
-            //GetWeatherInfo(location);
+
         }
 
+/*      public void MapTapped(GeoLocation location)
+        {
+        }
+*/
         private async void MoveToAddress(string address)
         {
             if (address == "")
@@ -95,26 +102,92 @@ namespace TruckBridges.Core.ViewModels
             moveToLocation(location, 18);
         }
 
-        private async void AddStopPin(string address)
+
+        private GeoLocation destinationLocation = null;
+        public GeoLocation DestinationLocation
+        {
+            get { return destinationLocation; }
+            set { destinationLocation = value; }
+        }
+
+        private async void SetNewDestinationAddress(string address)
         {
             if (address == "")
                 return;
 
             var location = await geocoder.GetLocationFromAddress(address);
             location.Locality = address;
-            stopPinFound(location);
+
+            DestinationLocation = location;
+
+            Locations.Clear();
+
+            ShowRoute();
         }
 
+        private async void ShowRoute()
+        {
+            List<Route> routes = await locationService.GetRoutes(MyLocation, DestinationLocation, vehicleDetails);
+
+            if (routes.Count == 0)
+                return;
+
+            CombinedRoute route = new CombinedRoute(routes.First());
+
+            foreach (var leg in route.leg)
+            {
+                List<Maneuver> maneuvers = route.InterpolateManeuvers(leg.maneuver);
+
+                List<SnappedPoints> points = await locationService.SnapToRoads(maneuvers);
+
+                if (points != null)
+                    route.snappedSpan.Add(new SnappedSpan(points));
+            }
+            
+            setNewRoute(route);
+        }
+
+
+        public void ReceiveBridgeData(string bridgeJSON)
+        {
+            List<BridgeDetails> bridgeDetailsList = locationService.GetBridgeLocations(bridgeJSON);
+
+            if (bridgeDetailsList != null && vehicleDetails != null)
+            {
+                foreach (var bridgeDetails in bridgeDetailsList)
+                {
+                    if (bridgeDetails.SignedClearance <= vehicleDetails.Clearance)
+                    {
+                        var area = new GeoArea(new GeoLocation(bridgeDetails.Latitude, bridgeDetails.Longitude),
+                                               new GeoLocation(bridgeDetails.Latitude, bridgeDetails.Longitude));
+                        area.Locality = bridgeDetails.Description;
+                        BridgeLocations.Add(area);
+                    }
+                }
+            }
+
+            // set bridge locations on map
+            setBridgeLocations(BridgeLocations);
+        }
+
+
         private Action<GeoLocation, float> moveToLocation;
-        private Action<GeoLocation> stopPinFound;
+        private Action<List<GeoArea>> setBridgeLocations;
+        private Action<CombinedRoute> setNewRoute;
         public void OnMapSetup(Action<GeoLocation, float> MoveToLocation,
-                               Action<GeoLocation> StopPinFound)
+                               Action<List<GeoArea>> SetBridgeLocations,
+                               Action<CombinedRoute> SetNewRoute)
         {
             moveToLocation = MoveToLocation;
-            stopPinFound = StopPinFound;
+            setBridgeLocations = SetBridgeLocations;
+            setNewRoute = SetNewRoute;
+        }
 
-            // add selected destination pin
-            //AddStopPin(City);
+
+        public VehicleDetails vehicleDetails { get; set; }
+        public void Init(VehicleDetails details)
+        {
+            vehicleDetails = details;
         }
 
 
@@ -126,20 +199,16 @@ namespace TruckBridges.Core.ViewModels
         public MapViewModel(IGeoCoder geocoder)
         {
             this.geocoder = geocoder;
-            locations = new ObservableCollection<LocationAutoCompleteResult>();
 
-            SelectLocationCommand = new
-                MvxCommand<LocationAutoCompleteResult>(selectedLocation =>
+            SelectLocationCommand = new MvxCommand<LocationAutoCompleteResult>(selectedLocation =>
             {
-                AddStopPin(selectedLocation.LocalizedName);
+                SetNewDestinationAddress(selectedLocation.LocalizedName);
             });
 
             ButtonSearch = new MvxCommand(() =>
             {
                 if (SearchTerm.Length > 3 && MyLocation != null)
-                {
                     SearchLocations(MyLocation, SearchTerm);
-                }
             });
 
             ButtonMenu = new MvxCommand(() =>

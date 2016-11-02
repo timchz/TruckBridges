@@ -11,6 +11,7 @@ namespace TruckBridges.Core.Models
         public string Locality { get; set; }
 
         public GeoLocation() { }
+
         public GeoLocation(double latitude, double longitude, double? altitude = null)
         {
             Latitude = latitude;
@@ -19,9 +20,21 @@ namespace TruckBridges.Core.Models
             Altitude = altitude;
         }
 
+        public GeoLocation(double latitude, double longitude, string locality)
+        {
+            Latitude = latitude;
+            Longitude = longitude;
+            HasAltitude = false;
+            Locality = locality;
+        }
+
         public string LatLongText()
         {
             return (Latitude.ToString() + ", " + Longitude.ToString());
+        }
+        public string LatLongTextNoSpaces()
+        {
+            return (Latitude.ToString() + "," + Longitude.ToString());
         }
     }
 }

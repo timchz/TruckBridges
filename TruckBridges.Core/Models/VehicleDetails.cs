@@ -1,5 +1,6 @@
 ﻿// Created by Tim Heinz - n8683981
 
+using System.Collections.Generic;
 using Newtonsoft.Json;
 
 namespace TruckBridges.Core.Models
@@ -9,8 +10,8 @@ namespace TruckBridges.Core.Models
         [JsonProperty("Registration")]
         public string Registration { get; set; }
 
-        [JsonProperty("Clearance")]
-        public double Clearance { get; set; }
+        [JsonProperty("Height")]
+        public double Height { get; set; }
 
         [JsonProperty("Weight")]
         public double Weight { get; set; }
@@ -24,9 +25,16 @@ namespace TruckBridges.Core.Models
         [JsonProperty("Trailers")]
         public int Trailers { get; set; }
 
-        [JsonProperty("HazardousMaterialClass")]
-        public int HazardousMaterialClass { get; set; }
+        public double ExtraHeight { get; set; }
 
+        public double Clearance { get; set; }
+        public string HazardousMaterialClass { get; set; }
+
+
+        public void Calculate()
+        {
+            Clearance = Height + ExtraHeight;
+        }
 
         public void ParseQRCode(string QRCodeText)
         {
@@ -42,8 +50,8 @@ namespace TruckBridges.Core.Models
                 if (tokens[i].StartsWith("RG:"))
                     Registration = tokens[i].Substring(3);
 
-                if (tokens[i].StartsWith("CL:"))
-                    Clearance = double.Parse(tokens[i].Substring(3));
+                if (tokens[i].StartsWith("HT:"))
+                    Height = double.Parse(tokens[i].Substring(3));
 
                 if (tokens[i].StartsWith("WT:"))
                     Weight = double.Parse(tokens[i].Substring(3));
@@ -56,9 +64,6 @@ namespace TruckBridges.Core.Models
 
                 if (tokens[i].StartsWith("TR:"))
                     Trailers = int.Parse(tokens[i].Substring(3));
-
-                if (tokens[i].StartsWith("HM:"))
-                    HazardousMaterialClass = int.Parse(tokens[i].Substring(3));
             }
         }
 

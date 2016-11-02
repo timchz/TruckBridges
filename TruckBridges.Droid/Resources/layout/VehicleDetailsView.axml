@@ -3,31 +3,21 @@
     xmlns:local="http://schemas.android.com/apk/res-auto"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:background="#ff744c4c">
+    >
     <LinearLayout
         android:id="@+id/header"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
+        android:layout_centerHorizontal="true"
         android:layout_alignParentTop="true">
         <TextView
             android:id="@+id/textView_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_centerInParent="true"
-            android:layout_centerHorizontal="true"
-            android:layout_centerVertical="true"
             android:textSize="24dp"
             android:text="Vehicle Details" />
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentRight="true"
-            local:MvxBind="Click ButtonCancel"
-            android:text="Cancel"
-            android:id="@+id/button_cancel" />
     </LinearLayout>
-
     <TableLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -45,20 +35,20 @@
         </TableRow>
         <TableRow>
             <TextView
-                android:text="Clearance"
+                android:text="Height"
                 android:padding="3dip" />
             <TextView
                 android:text=""
                 android:gravity="right"
                 android:padding="3dip"
-                local:MvxBind="Text vehicleDetails.Clearance" />
+                local:MvxBind="Text vehicleDetails.Height" />
         </TableRow>
         <TableRow>
             <TextView
                 android:text="Weight"
                 android:padding="3dip" />
             <TextView
-                android:text="10400 KG"
+                android:text=""
                 android:gravity="right"
                 android:padding="3dip"
                 local:MvxBind="Text vehicleDetails.Weight" />
@@ -68,7 +58,7 @@
                 android:text="Length"
                 android:padding="3dip" />
             <TextView
-                android:text="12m"
+                android:text=""
                 android:gravity="right"
                 android:padding="3dip"
                 local:MvxBind="Text vehicleDetails.Length" />
@@ -78,7 +68,7 @@
                 android:text="Transport Speed Limit"
                 android:padding="3dip" />
             <TextView
-                android:text="100 KM/H"
+                android:text=""
                 android:gravity="right"
                 android:padding="3dip"
                 local:MvxBind="Text vehicleDetails.SpeedLimit" />
@@ -88,36 +78,63 @@
                 android:text="No. of Trailers"
                 android:padding="3dip" />
             <TextView
-                android:text="1"
+                android:text=""
                 android:gravity="right"
                 android:padding="3dip"
                 local:MvxBind="Text vehicleDetails.Trailers" />
         </TableRow>
         <TableRow>
             <TextView
+                android:text="Extra Height"
+                android:padding="3dip" />
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_alignParentTop="true">
+                <EditText
+                    android:id="@+id/extraHeight_text"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="numberDecimal"
+                    local:MvxBind="Text HeightSliderValue, Mode=TwoWay" />
+                <SeekBar
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/extraHeight_text"
+                    local:MvxBind="Progress HeightSliderValue" />
+              </LinearLayout>
+        </TableRow>
+        <TableRow>
+            <TextView
                 android:text="Hazardous Material Class"
                 android:padding="3dip" />
-            <TextView
-                android:text="Corrosive Materials"
-                android:gravity="right"
-                android:padding="3dip"
-                local:MvxBind="Text vehicleDetails.HazardousMaterialClass" />
+            <MvxRadioGroup
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                local:MvxItemTemplate="@layout/radioitem"
+                local:MvxBind="ItemsSource HMCItems; SelectedItem SelectedHMC" />
         </TableRow>
-    </TableLayout>  
-  
+    </TableLayout>
     <LinearLayout
-        android:id="@+id/footer"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:layout_below="@+id/body"
-        android:layout_alignParentBottom="true">
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        >
         <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerInParent="true"
-            local:MvxBind="Click ButtonConfirm"
+            android:layout_width="150dp"
+            android:layout_height="70dp"
             android:text="Confirm"
-            android:id="@+id/button_confirm" />
+            android:id="@+id/button_confirm"
+            local:MvxBind="Click ButtonConfirm" />
+        <Button
+            android:layout_width="150dp"
+            android:layout_height="70dp"
+            android:id="@+id/button_cancel"
+            android:text="Cancel"
+            local:MvxBind="Click ButtonCancel" />
     </LinearLayout>
 </RelativeLayout>

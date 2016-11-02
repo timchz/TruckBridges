@@ -1,1 +1,0 @@
-<TableRow xmlns:local="http://schemas.android.com/apk/res-auto" xmlns:android="http://schemas.android.com/apk/res/android"><TextView android:padding="3dip" local:MvxBind="Text RowLabel, Mode=OneWay" /><TextView android:gravity="right" android:padding="3dip" local:MvxBind="Text RowValue, Mode=OneWay" /></TableRow>

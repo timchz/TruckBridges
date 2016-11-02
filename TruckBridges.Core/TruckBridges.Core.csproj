@@ -5,7 +5,7 @@
     <MinimumVisualStudioVersion>10.0</MinimumVisualStudioVersion>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{A3D66B59-6FA7-419B-8566-7DF64AD00260}</ProjectGuid>
+    <ProjectGuid>{5D83E427-A4CB-4CB0-B8F1-CBAE13565732}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>TruckBridges.Core</RootNamespace>
@@ -35,18 +35,21 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="App.cs" />
-    <Compile Include="Database\LocationsDatabase.cs" />
-    <Compile Include="Interfaces\ISqlite.cs" />
-    <Compile Include="Interfaces\IToast.cs" />
-    <Compile Include="Models\GeoLocation.cs" />
     <Compile Include="Interfaces\IGeoCoder.cs" />
+    <Compile Include="Models\BridgeDetails.cs" />
+    <Compile Include="Models\CombinedRoute.cs" />
+    <Compile Include="Models\GeoArea.cs" />
+    <Compile Include="Models\GeoLocation.cs" />
+    <Compile Include="Models\GooglePlacesWebAPIResult.cs" />
+    <Compile Include="Models\GoogleRoadsAPIResult.cs" />
+    <Compile Include="Models\HereAPIResult.cs" />
+    <Compile Include="Models\HMCItem.cs" />
     <Compile Include="Models\LocationAutoCompleteResult.cs" />
     <Compile Include="Models\VehicleDetails.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\LocationApp.cs" />
     <Compile Include="Services\LocationService.cs" />
     <Compile Include="ViewModels\MapViewModel.cs" />
-    <Compile Include="ViewModels\ScanmenuViewModel.cs" />
     <Compile Include="ViewModels\ScanViewModel.cs" />
     <Compile Include="ViewModels\VehicleDetailsViewModel.cs" />
   </ItemGroup>
@@ -71,10 +74,6 @@
       <HintPath>..\packages\Newtonsoft.Json.9.0.1\lib\portable-net45+wp80+win8+wpa81\Newtonsoft.Json.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="SQLite.Net, Version=3.1.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\SQLite.Net-PCL.3.1.1\lib\portable-win8+net45+wp8+wpa81+MonoAndroid1+MonoTouch1\SQLite.Net.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
     <Reference Include="ZXing.Net.Mobile.Core, Version=2.1.47.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\ZXing.Net.Mobile.2.1.47\lib\portable-net45+netcore45+wpa81+wp8\ZXing.Net.Mobile.Core.dll</HintPath>
       <Private>True</Private>
@@ -91,7 +90,6 @@
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

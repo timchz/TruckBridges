@@ -82,16 +82,7 @@ namespace TruckBridges.Core.ViewModels
         {
             MyLocation = location;
         }
-    
-        public void OnMyLocationNearBridge(GeoLocation location)
-        {
 
-        }
-
-/*      public void MapTapped(GeoLocation location)
-        {
-        }
-*/
         private async void MoveToAddress(string address)
         {
             if (address == "")
@@ -213,7 +204,7 @@ namespace TruckBridges.Core.ViewModels
 
             ButtonMenu = new MvxCommand(() =>
             {
-                ShowViewModel<ScanViewModel>();
+                ShowViewModel<VehicleDetailsViewModel>(vehicleDetails);
             });
         }
 

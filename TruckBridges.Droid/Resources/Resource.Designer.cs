@@ -482,26 +482,23 @@ namespace TruckBridges.Droid
 			// aapt resource value: 0x7f080013
 			public const int button1 = 2131230739;
 			
-			// aapt resource value: 0x7f080021
-			public const int button_cancel = 2131230753;
-			
 			// aapt resource value: 0x7f080020
-			public const int button_confirm = 2131230752;
+			public const int button_cancel = 2131230752;
+			
+			// aapt resource value: 0x7f08001f
+			public const int button_confirm = 2131230751;
 			
 			// aapt resource value: 0x7f080011
 			public const int button_menu = 2131230737;
 			
-			// aapt resource value: 0x7f08001d
-			public const int cancel = 2131230749;
-			
-			// aapt resource value: 0x7f080022
-			public const int contentFrame = 2131230754;
+			// aapt resource value: 0x7f080021
+			public const int contentFrame = 2131230753;
 			
 			// aapt resource value: 0x7f08000d
 			public const int dark = 2131230733;
 			
-			// aapt resource value: 0x7f08001f
-			public const int extraHeight_text = 2131230751;
+			// aapt resource value: 0x7f08001e
+			public const int extraHeight_text = 2131230750;
 			
 			// aapt resource value: 0x7f080010
 			public const int header = 2131230736;
@@ -560,8 +557,8 @@ namespace TruckBridges.Droid
 			// aapt resource value: 0x7f080006
 			public const int terrain = 2131230726;
 			
-			// aapt resource value: 0x7f08001e
-			public const int textView_title = 2131230750;
+			// aapt resource value: 0x7f08001d
+			public const int textView_title = 2131230749;
 			
 			// aapt resource value: 0x7f08000b
 			public const int wide = 2131230731;

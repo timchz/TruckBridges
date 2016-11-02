@@ -36,11 +36,11 @@ namespace TruckBridges.Core.Models
             Clearance = Height + ExtraHeight;
         }
 
-        public void ParseQRCode(string QRCodeText)
+        public bool ParseQRCode(string QRCodeText)
         {
-            // return if input string is null
-            if (QRCodeText == null)
-                return;
+            // return if input string is null or empty
+            if (QRCodeText == null || QRCodeText == "")
+                return false;
 
             var contents = QRCodeText;
             string[] tokens = contents.Split('\n');
@@ -49,22 +49,25 @@ namespace TruckBridges.Core.Models
             {
                 if (tokens[i].StartsWith("RG:"))
                     Registration = tokens[i].Substring(3);
-
+                else
                 if (tokens[i].StartsWith("HT:"))
                     Height = double.Parse(tokens[i].Substring(3));
-
+                else
                 if (tokens[i].StartsWith("WT:"))
                     Weight = double.Parse(tokens[i].Substring(3));
-
+                else
                 if (tokens[i].StartsWith("LT:"))
                     Length = double.Parse(tokens[i].Substring(3));
-
+                else
                 if (tokens[i].StartsWith("SL:"))
                     SpeedLimit = int.Parse(tokens[i].Substring(3));
-
+                else
                 if (tokens[i].StartsWith("TR:"))
                     Trailers = int.Parse(tokens[i].Substring(3));
+                else
+                    return false;
             }
+            return true;
         }
 
     }

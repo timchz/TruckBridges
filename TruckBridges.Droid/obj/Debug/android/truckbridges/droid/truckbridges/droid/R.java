@@ -385,13 +385,12 @@ containing a value of this type.
         public static final int adjust_width=0x7f080008;
         public static final int auto=0x7f08000c;
         public static final int button1=0x7f080013;
-        public static final int button_cancel=0x7f080021;
-        public static final int button_confirm=0x7f080020;
+        public static final int button_cancel=0x7f080020;
+        public static final int button_confirm=0x7f08001f;
         public static final int button_menu=0x7f080011;
-        public static final int cancel=0x7f08001d;
-        public static final int contentFrame=0x7f080022;
+        public static final int contentFrame=0x7f080021;
         public static final int dark=0x7f08000d;
-        public static final int extraHeight_text=0x7f08001f;
+        public static final int extraHeight_text=0x7f08001e;
         public static final int header=0x7f080010;
         public static final int hybrid=0x7f080002;
         public static final int icon_only=0x7f080009;
@@ -411,7 +410,7 @@ containing a value of this type.
         public static final int searchbox=0x7f080012;
         public static final int standard=0x7f08000a;
         public static final int terrain=0x7f080006;
-        public static final int textView_title=0x7f08001e;
+        public static final int textView_title=0x7f08001d;
         public static final int wide=0x7f08000b;
     }
     public static final class integer {

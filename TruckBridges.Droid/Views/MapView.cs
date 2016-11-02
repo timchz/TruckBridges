@@ -11,8 +11,6 @@ using TruckBridges.Core.Models;
 using TruckBridges.Core.ViewModels;
 using Android.Content.Res;
 using System.IO;
-//using Acr.UserDialogs;
-//using MvvmCross.Platform;
 
 namespace TruckBridges.Droid.Views
 {
@@ -21,9 +19,13 @@ namespace TruckBridges.Droid.Views
     {
         MapViewModel vm;
         private GoogleMap map;
+
         private List<Marker> mapMarkers;
         private List<Polyline> mapPolylines;
         private List<Marker> bridgeMarkers;
+
+        GeoLocation currentLocation = null;
+        float currentZoom = -1;
         bool firstLocationChange = true;
 
         protected override void OnCreate(Bundle bundle)
@@ -47,11 +49,8 @@ namespace TruckBridges.Droid.Views
             map = googleMap;
             map.MyLocationEnabled = true;
             map.MyLocationChange += Map_MyLocationChange;
-            //map.MapLongClick += Map_MapClick;
             map.UiSettings.ZoomControlsEnabled = true;
             map.UiSettings.CompassEnabled = false;
-            //map.UiSettings.MapToolbarEnabled = true;
-            //map.UiSettings.MyLocationButtonEnabled = true;
 
             // give ViewModel access to specific local methods
             vm.OnMapSetup(MoveToLocation, SetBridgeLocations, SetNewRoute);
@@ -69,10 +68,6 @@ namespace TruckBridges.Droid.Views
                 MoveToLocation(location, 13);
                 firstLocationChange = false;
             }
-            else
-            {
-                MoveToLocation(location);
-            }
             vm.OnMyLocationChanged(location);
 
             // check if we're near a bridge
@@ -88,7 +83,6 @@ namespace TruckBridges.Droid.Views
                         bridgeMarkers[i].Title = "WARNING";
                         bridgeMarkers[i].Snippet = "Approaching Low Clearance Bridge";
                         bridgeMarkers[i].ShowInfoWindow();
-                        //vm.OnMyLocationNearBridge(new GeoLocation(marker.Position.Latitude, marker.Position.Longitude));
                     }
                 }
                 else
@@ -99,19 +93,6 @@ namespace TruckBridges.Droid.Views
             }
             
         }
-
-        /*
-        private void Map_MapClick(object sender, GoogleMap.MapLongClickEventArgs e)
-        {
-            //vm.MapTapped(new GeoLocation(e.Point.Latitude, e.Point.Longitude));
-            var fakeloc = new Android.Locations.Location("Fake Location");
-            fakeloc.Latitude = -27.477369;
-            fakeloc.Longitude = 153.026863;
-            GoogleMap.MyLocationChangeEventArgs args = new GoogleMap.MyLocationChangeEventArgs(fakeloc);
-
-            Map_MyLocationChange(this, args);
-        }
-        */
 
         private string ReadAsset(string name)
         {
@@ -141,6 +122,7 @@ namespace TruckBridges.Droid.Views
 
             CameraPosition.Builder builder = CameraPosition.InvokeBuilder();
             builder.Target(new LatLng(geoLocation.Latitude, geoLocation.Longitude));
+
             if (zoom != -1)
             {
                 builder.Zoom(zoom);
@@ -150,8 +132,6 @@ namespace TruckBridges.Droid.Views
                 builder.Zoom(map.CameraPosition.Zoom);
             }
 
-            //builder.Bearing(155);
-            //builder.Tilt(65);
             var cameraPosition = builder.Build();
             var cameraUpdate = CameraUpdateFactory.NewCameraPosition(cameraPosition);
 
@@ -170,6 +150,7 @@ namespace TruckBridges.Droid.Views
             RemoveAllPolylines();
             AddWaypoints(route.waypoint);
             AddLegs(route.leg, route.snappedSpan);
+            firstLocationChange = true;
         }
 
 

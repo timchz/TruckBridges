@@ -11,5 +11,8 @@ E:\Documents\Visual Studio 2015\Projects\TruckBridges\TruckBridges.Core\bin\Debu
 E:\Documents\Visual Studio 2015\Projects\TruckBridges\TruckBridges.Core\bin\Debug\Newtonsoft.Json.xml
 E:\Documents\Visual Studio 2015\Projects\TruckBridges\TruckBridges.Core\obj\Debug\TruckBridges.Core.dll
 E:\Documents\Visual Studio 2015\Projects\TruckBridges\TruckBridges.Core\obj\Debug\TruckBridges.Core.pdb
+E:\Documents\Visual Studio 2015\Projects\TruckBridges\TruckBridges.Core\obj\Debug\TruckBridges.Core.csprojResolveAssemblyReference.cache
+E:\Documents\Visual Studio 2015\Projects\TruckBridges\TruckBridges.Core\obj\Debug\TruckBridges.Core.dll.mdb
+E:\Documents\Visual Studio 2015\Projects\TruckBridges\TruckBridges.Core\bin\Debug\TruckBridges.Core.dll.mdb
 E:\Documents\Visual Studio 2015\Projects\TruckBridges\TruckBridges.Core\obj\Debug\TruckBridges.Core.dll.mdb
 E:\Documents\Visual Studio 2015\Projects\TruckBridges\TruckBridges.Core\bin\Debug\TruckBridges.Core.dll.mdb

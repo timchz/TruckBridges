@@ -1,0 +1,15 @@
+E:\Documents\Visual Studio 2015\Projects\TruckBridges\TruckBridges.Core\bin\Debug\TruckBridges.Core.dll
+E:\Documents\Visual Studio 2015\Projects\TruckBridges\TruckBridges.Core\bin\Debug\TruckBridges.Core.pdb
+E:\Documents\Visual Studio 2015\Projects\TruckBridges\TruckBridges.Core\bin\Debug\MvvmCross.Binding.dll
+E:\Documents\Visual Studio 2015\Projects\TruckBridges\TruckBridges.Core\bin\Debug\MvvmCross.Core.dll
+E:\Documents\Visual Studio 2015\Projects\TruckBridges\TruckBridges.Core\bin\Debug\MvvmCross.Localization.dll
+E:\Documents\Visual Studio 2015\Projects\TruckBridges\TruckBridges.Core\bin\Debug\MvvmCross.Platform.dll
+E:\Documents\Visual Studio 2015\Projects\TruckBridges\TruckBridges.Core\bin\Debug\Newtonsoft.Json.dll
+E:\Documents\Visual Studio 2015\Projects\TruckBridges\TruckBridges.Core\bin\Debug\ZXing.Net.Mobile.Core.dll
+E:\Documents\Visual Studio 2015\Projects\TruckBridges\TruckBridges.Core\bin\Debug\zxing.portable.dll
+E:\Documents\Visual Studio 2015\Projects\TruckBridges\TruckBridges.Core\bin\Debug\ZXingNetMobile.dll
+E:\Documents\Visual Studio 2015\Projects\TruckBridges\TruckBridges.Core\bin\Debug\Newtonsoft.Json.xml
+E:\Documents\Visual Studio 2015\Projects\TruckBridges\TruckBridges.Core\obj\Debug\TruckBridges.Core.dll
+E:\Documents\Visual Studio 2015\Projects\TruckBridges\TruckBridges.Core\obj\Debug\TruckBridges.Core.pdb
+E:\Documents\Visual Studio 2015\Projects\TruckBridges\TruckBridges.Core\obj\Debug\TruckBridges.Core.dll.mdb
+E:\Documents\Visual Studio 2015\Projects\TruckBridges\TruckBridges.Core\bin\Debug\TruckBridges.Core.dll.mdb
